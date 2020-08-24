@@ -1,1 +1,26 @@
-<p>form works!</p>
+<ng-container *transloco="let t;">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-label class="label">{{t('messageTypes')}}</mat-label>
+    <section class="message-types" formArrayName="messageTypes">
+      <ng-container *ngFor="let messageType of messageTypes.controls; let i=index">
+        <ng-container [formGroupName]="i">
+          <mat-checkbox formControlName="selected">
+            {{messageType.get('name').value}}
+          </mat-checkbox>
+        </ng-container>
+      </ng-container>
+    </section>
+
+    <mat-form-field>
+      <mat-label>{{t('stations')}}</mat-label>
+      <input matInput formControlName="stations">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{t('countries')}}</mat-label>
+      <input matInput formControlName="countries">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit">{{t('submit')}}</button>
+  </form>
+</ng-container>

@@ -1,1 +1,18 @@
-<p>briefing works!</p>
+<ng-container *transloco="let t;">
+  <ng-container *ngIf="(loading$ | async) !== true; else loading">
+    <ng-container *ngIf="(error$ | async) !== true; else error">
+      <div *ngIf="reports.length === 0">
+        {{t('empty')}}
+      </div>
+      <div *ngFor="let item of reports">{{item | json}}</div>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+
+  <ng-template #error>
+    <div>{{t('error')}}</div>
+  </ng-template>
+</ng-container>

@@ -1,1 +1,8 @@
-{}
+{
+  "messageTypes": "Message Types",
+  "stations": "Airports",
+  "countries": "Countries",
+  "submit": "Create Briefing",
+  "empty": "No results.",
+  "error": "Sorry, unexpected error occured."
+}

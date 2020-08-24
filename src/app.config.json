@@ -1,0 +1,20 @@
+{
+  "queryUrl": "https://ogcie.iblsoft.com/ria/opmetquery",
+  "messageTypes": [
+    {
+      "name": "METAR",
+      "selected": true,
+      "value": "METAR"
+    },
+    {
+      "name": "SIGMET",
+      "selected": false,
+      "value": "SIGMET"
+    },
+    {
+      "name": "TAF",
+      "selected": false,
+      "value": "TAF"
+    }
+  ]
+}

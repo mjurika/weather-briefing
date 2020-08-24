@@ -1,0 +1,20 @@
+form {
+	max-width: 400px;
+	padding: 2rem 0;
+
+	.label {
+		color: rgba(0, 0, 0, 0.6);
+		font-size: 0.8rem;
+	}
+
+	.message-types {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1.5rem;
+	}
+
+	.mat-form-field {
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+}
