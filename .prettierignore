@@ -1,0 +1,5 @@
+*.json
+*.html
+.vscode/*
+dist
+README.md
