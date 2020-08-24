@@ -129,6 +129,7 @@
   },
   "defaultProject": "weather-briefing",
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "defaultCollection": "@datorama/akita"
   }
 }
