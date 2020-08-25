@@ -30,7 +30,7 @@ export class FormComponent {
 			messageTypes: this.buildMessageTypes(),
 			spatial: this.formBuilder.group(
 				{
-					airports: ['LKPR EGLL', Validators.pattern(this.airportsRegex)],
+					airports: [undefined, Validators.pattern(this.airportsRegex)],
 					countries: [undefined, Validators.pattern(this.countriesRegex)]
 				},
 				{ validators: [this.requiredOneOfGroup] }
