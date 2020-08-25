@@ -1,9 +1,12 @@
 form {
 	max-width: 450px;
 	padding: 2rem 0;
+	margin-top: 2rem;
+	position: relative;
 
 	.mat-error {
-		margin-bottom: 0.5rem;
+		position: absolute;
+		top: 0;
 	}
 
 	.label {

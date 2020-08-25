@@ -43,7 +43,7 @@ export class FormComponent {
 	 */
 	buildMessageTypes(): FormArray {
 		const arr = this.messageTypesCnf.map((type) => this.formBuilder.group(type));
-		return this.formBuilder.array(arr);
+		return this.formBuilder.array(arr, { validators: this.selectedOneOfArray });
 	}
 
 	/**
@@ -74,5 +74,13 @@ export class FormComponent {
 		});
 
 		return anyValue ? undefined : { requiredOneOfGroup: true };
+	}
+
+	/**
+	 * Check if at least one control of group has any non empty value.
+	 * @param control FormGroup of controls.
+	 */
+	private selectedOneOfArray(control: FormArray): ValidationErrors | undefined {
+		return control.controls.some((c) => c.value.selected) ? undefined : { selectedOneOfArray: true };
 	}
 }

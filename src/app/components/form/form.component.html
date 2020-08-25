@@ -1,7 +1,11 @@
 <ng-container *transloco="let t;">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <ng-container *ngIf="form.get('spatial').errors && form.get('spatial').touched">
-      <mat-error *ngIf="form.get('spatial').errors.requiredOneOfGroup">{{t('requiredOneOfGroup')}}</mat-error>
+    <!-- Form errors -->
+    <ng-container *ngIf="form.get('spatial').touched">
+      <mat-error *ngIf="form.get('spatial').errors?.requiredOneOfGroup">{{t('requiredOneOfGroup')}}</mat-error>
+    </ng-container>
+    <ng-container *ngIf="form.get('messageTypes').touched">
+      <mat-error *ngIf="form.get('messageTypes').errors?.selectedOneOfArray">{{t('selectedOneOfArray')}}</mat-error>
     </ng-container>
 
     <mat-label class="label">{{t('messageTypes')}}</mat-label>
