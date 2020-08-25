@@ -16,7 +16,7 @@
             <tr *ngFor="let report of group.value">
               <td>{{report.queryType}}</td>
               <td>{{report.reportTime | date: 'd.M.yyyy HH:mm:ss':'UTC+02' }}</td>
-              <td>{{report.text}}</td>
+              <td [innerHTML]="report.text | colorReport"></td>
             </tr>
           </tbody>
         </table>

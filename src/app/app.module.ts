@@ -13,6 +13,7 @@ import { BriefingComponent } from './components/briefing/briefing.component';
 import { FormComponent } from './components/form/form.component';
 import { MaterialModule } from './material.module';
 import { TranslocoRootModule } from './transloco-root.module';
+import { ColorReportPipe } from './pipes/color-report.pipe';
 
 /**
  * Register locale for datePipe.
@@ -30,7 +31,7 @@ const appInitializerFn = (appConfigService: AppConfigService) => {
 };
 
 @NgModule({
-	declarations: [AppComponent, FormComponent, BriefingComponent],
+	declarations: [AppComponent, FormComponent, BriefingComponent, ColorReportPipe],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,

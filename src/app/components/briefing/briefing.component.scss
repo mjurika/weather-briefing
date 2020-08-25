@@ -15,6 +15,8 @@ table {
 	}
 
 	td {
+		white-space: pre;
+
 		&:first-child {
 			width: 80px;
 		}
