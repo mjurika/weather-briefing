@@ -74,7 +74,7 @@ export class BriefingService {
 		if (!data?.trim()) {
 			return;
 		}
-		return data.trim()?.split(/\s+/);
+		return data.trim().split(/\s+/);
 	}
 
 	/**
