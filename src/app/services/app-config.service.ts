@@ -20,6 +20,6 @@ export class AppConfigService {
 	 * Loads application configuration.
 	 */
 	async loadAppConfig(): Promise<void> {
-		this.appConfig = await this.http.get<IAppConfig>(`app.config.json`).toPromise();
+		this.appConfig = await this.http.get<IAppConfig>('assets/app.config.json').toPromise();
 	}
 }
