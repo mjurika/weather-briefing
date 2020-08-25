@@ -12,8 +12,22 @@ export const formFieldDefaults: MatFormFieldDefaultOptions = {
 
 @NgModule({
 	declarations: [],
-	imports: [CommonModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatProgressSpinnerModule],
-	exports: [CommonModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatProgressSpinnerModule],
+	imports: [
+		CommonModule, ////
+		MatButtonModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatCheckboxModule,
+		MatProgressSpinnerModule
+	],
+	exports: [
+		CommonModule, ////
+		MatButtonModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatCheckboxModule,
+		MatProgressSpinnerModule
+	],
 	providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: formFieldDefaults }]
 })
 export class MaterialModule {}

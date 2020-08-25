@@ -1,0 +1,33 @@
+$table-border-color: #dee2e6;
+$bg-color: #e9ecef;
+
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1rem;
+	border-collapse: collapse;
+
+	th,
+	td {
+		padding: 0.75rem;
+		vertical-align: top;
+		border-top: 1px solid $table-border-color;
+	}
+
+	td {
+		&:first-child {
+			width: 80px;
+		}
+
+		&:nth-child(2) {
+			width: 150px;
+		}
+	}
+
+	thead th {
+		text-align: left;
+		vertical-align: bottom;
+		border-bottom: 2px solid $table-border-color;
+		background-color: $bg-color;
+	}
+}

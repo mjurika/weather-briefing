@@ -1,5 +1,7 @@
+import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import localeSk from '@angular/common/locales/sk';
+import { APP_INITIALIZER, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +13,11 @@ import { BriefingComponent } from './components/briefing/briefing.component';
 import { FormComponent } from './components/form/form.component';
 import { MaterialModule } from './material.module';
 import { TranslocoRootModule } from './transloco-root.module';
+
+/**
+ * Register locale for datePipe.
+ */
+registerLocaleData(localeSk);
 
 /**
  * Initialize app config.
@@ -41,7 +48,8 @@ const appInitializerFn = (appConfigService: AppConfigService) => {
 			useFactory: appInitializerFn,
 			multi: true,
 			deps: [AppConfigService]
-		}
+		},
+		{ provide: LOCALE_ID, useValue: 'sk' }
 	],
 	bootstrap: [AppComponent]
 })
