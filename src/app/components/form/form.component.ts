@@ -46,6 +46,14 @@ export class FormComponent {
 		return this.form.get('spatial') as FormGroup;
 	}
 
+	get airports(): FormGroup {
+		return this.spatial.get('airports') as FormGroup;
+	}
+
+	get countries(): FormGroup {
+		return this.spatial.get('countries') as FormGroup;
+	}
+
 	/**
 	 * Build message types FormArray.
 	 * @returns Form array of boolean controls.
