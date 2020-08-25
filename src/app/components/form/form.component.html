@@ -1,12 +1,13 @@
 <ng-container *transloco="let t;">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <!-- Form errors -->
-    <ng-container *ngIf="form.get('spatial').touched">
-      <mat-error *ngIf="form.get('spatial').errors?.requiredOneOfGroup">{{t('requiredOneOfGroup')}}</mat-error>
-    </ng-container>
-    <ng-container *ngIf="form.get('messageTypes').touched">
-      <mat-error *ngIf="form.get('messageTypes').errors?.selectedOneOfArray">{{t('selectedOneOfArray')}}</mat-error>
-    </ng-container>
+    <mat-error class="global" *ngIf="form.get('spatial').touched && form.get('spatial').errors?.requiredOneOfGroup">
+      {{t('requiredOneOfGroup')}}
+    </mat-error>
+    <mat-error class="global"
+      *ngIf="form.get('messageTypes').touched && form.get('messageTypes').errors?.selectedOneOfArray">
+      {{t('selectedOneOfArray')}}
+    </mat-error>
 
     <mat-label class="label">{{t('messageTypes')}}</mat-label>
     <section class="message-types" formArrayName="messageTypes">
@@ -22,12 +23,18 @@
     <ng-container formGroupName="spatial">
       <mat-form-field>
         <mat-label>{{t('airports')}}</mat-label>
-        <input matInput formControlName="stations">
+        <input matInput formControlName="airports">
+        <mat-error *ngIf="spatial.get('airports').touched && spatial.get('airports').errors?.pattern">
+          {{t('patternAirports')}}
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>{{t('countries')}}</mat-label>
         <input matInput formControlName="countries">
+        <mat-error *ngIf="spatial.get('countries').touched && spatial.get('countries').errors?.pattern">
+          {{t('patternCountries')}}
+        </mat-error>
       </mat-form-field>
     </ng-container>
 

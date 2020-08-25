@@ -15,7 +15,7 @@ export interface IFormData {
 		/**
 		 * ICAO codes of airports separated by space.
 		 */
-		stations: string;
+		airports: string;
 		/**
 		 * WMO codes of countries separated by space.
 		 */

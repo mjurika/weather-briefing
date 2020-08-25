@@ -58,7 +58,7 @@ export class BriefingService {
 				{
 					colorize,
 					reportTypes: data.messageTypes.filter((msg) => msg.selected).map((msg) => msg.value),
-					stations: this.splitByWhiteSpace(data.spatial.stations),
+					stations: this.splitByWhiteSpace(data.spatial.airports),
 					countries: this.splitByWhiteSpace(data.spatial.countries)
 				}
 			]

@@ -4,7 +4,7 @@ form {
 	margin-top: 2rem;
 	position: relative;
 
-	.mat-error {
+	.mat-error.global {
 		position: absolute;
 		top: 0;
 	}
@@ -22,7 +22,7 @@ form {
 
 	.mat-form-field {
 		display: block;
-		margin-bottom: 0.5rem;
+		margin-bottom: 1rem;
 	}
 
 	.controls {

@@ -6,5 +6,7 @@
   "empty": "No results.",
   "error": "Sorry, unexpected error occured.",
   "requiredOneOfGroup": "At least one airport (ICAO code) or country (WMO code) is required.",
-  "selectedOneOfArray": "At least one message type must be selected."
+  "selectedOneOfArray": "At least one message type must be selected.",
+  "patternAirports": "Airports must be 4 uppercase letter identifiers separated by spaces.",
+  "patternCountries": "Countries must be 2 uppercase letter identifiers separated by spaces."
 }
