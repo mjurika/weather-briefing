@@ -1,13 +1,15 @@
 <ng-container *transloco="let t;">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <!-- Form errors -->
-    <mat-error class="global" *ngIf="spatial.touched && spatial.errors && spatial.errors.requiredOneOfGroup">
-      {{t('requiredOneOfGroup')}}
-    </mat-error>
-    <mat-error class="global"
-      *ngIf="messageTypes.touched && messageTypes.errors && messageTypes.errors.selectedOneOfArray">
-      {{t('selectedOneOfArray')}}
-    </mat-error>
+    <div class="error-container">
+      <mat-error class="global" *ngIf="spatial.touched && spatial.errors && spatial.errors.requiredOneOfGroup">
+        {{t('requiredOneOfGroup')}}
+      </mat-error>
+      <mat-error class="global"
+        *ngIf="messageTypes.touched && messageTypes.errors && messageTypes.errors.selectedOneOfArray">
+        {{t('selectedOneOfArray')}}
+      </mat-error>
+    </div>
 
     <mat-label class="label">{{t('messageTypes')}}</mat-label>
     <section class="message-types" formArrayName="messageTypes">
