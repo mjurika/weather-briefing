@@ -1,8 +1,9 @@
 {
   "messageTypes": "Message Types",
-  "stations": "Airports",
+  "airports": "Airports",
   "countries": "Countries",
   "submit": "Create Briefing",
   "empty": "No results.",
-  "error": "Sorry, unexpected error occured."
+  "error": "Sorry, unexpected error occured.",
+  "requiredOneOfGroup": "At least one airport (ICAO code) or country (WMO code) is required."
 }

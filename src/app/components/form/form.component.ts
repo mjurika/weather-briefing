@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ValidationErrors } from '@angular/forms';
 import { BriefingService } from '@appModule/state/briefing.service';
 import { IMessageType } from '@interfaces/appConfig';
 import { AppConfigService } from '@services/app-config.service';
@@ -23,8 +23,13 @@ export class FormComponent {
 
 		this.form = this.formBuilder.group({
 			messageTypes: this.buildMessageTypes(),
-			stations: ['LKPR EGLL'],
-			countries: [undefined]
+			spatial: this.formBuilder.group(
+				{
+					stations: ['LKPR EGLL'],
+					countries: [undefined]
+				},
+				{ validators: [this.requiredOneOfGroup] }
+			)
 		});
 	}
 
@@ -51,5 +56,23 @@ export class FormComponent {
 		}
 
 		this.briefingService.get(this.form.value as IFormData);
+	}
+
+	/**
+	 * Check if at least one control of group has any non empty value.
+	 * @param control FormGroup of controls.
+	 */
+	private requiredOneOfGroup(control: FormGroup): ValidationErrors | undefined {
+		let anyValue = false;
+
+		Object.keys(control.controls).forEach((key) => {
+			if (!control.controls[key].value?.trim()) {
+				return;
+			}
+			anyValue = true;
+			return false;
+		});
+
+		return anyValue ? undefined : { requiredOneOfGroup: true };
 	}
 }

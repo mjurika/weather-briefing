@@ -1,5 +1,9 @@
 <ng-container *transloco="let t;">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ng-container *ngIf="form.get('spatial').errors && form.get('spatial').touched">
+      <mat-error *ngIf="form.get('spatial').errors.requiredOneOfGroup">{{t('requiredOneOfGroup')}}</mat-error>
+    </ng-container>
+
     <mat-label class="label">{{t('messageTypes')}}</mat-label>
     <section class="message-types" formArrayName="messageTypes">
       <ng-container *ngFor="let messageType of messageTypes.controls; let i=index">
@@ -11,16 +15,20 @@
       </ng-container>
     </section>
 
-    <mat-form-field>
-      <mat-label>{{t('stations')}}</mat-label>
-      <input matInput formControlName="stations">
-    </mat-form-field>
+    <ng-container formGroupName="spatial">
+      <mat-form-field>
+        <mat-label>{{t('airports')}}</mat-label>
+        <input matInput formControlName="stations">
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>{{t('countries')}}</mat-label>
-      <input matInput formControlName="countries">
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{t('countries')}}</mat-label>
+        <input matInput formControlName="countries">
+      </mat-form-field>
+    </ng-container>
 
-    <button mat-flat-button color="primary" type="submit">{{t('submit')}}</button>
+    <div class="controls">
+      <button mat-flat-button color="primary" type="submit">{{t('submit')}}</button>
+    </div>
   </form>
 </ng-container>

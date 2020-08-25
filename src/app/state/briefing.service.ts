@@ -58,8 +58,8 @@ export class BriefingService {
 				{
 					colorize,
 					reportTypes: data.messageTypes.filter((msg) => msg.selected).map((msg) => msg.value),
-					stations: this.splitByWhiteSpace(data.stations),
-					countries: this.splitByWhiteSpace(data.countries)
+					stations: this.splitByWhiteSpace(data.spatial.stations),
+					countries: this.splitByWhiteSpace(data.spatial.countries)
 				}
 			]
 		};

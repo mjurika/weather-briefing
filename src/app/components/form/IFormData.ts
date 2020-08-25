@@ -9,11 +9,16 @@ export interface IFormData {
 	 */
 	messageTypes: IMessageType[];
 	/**
-	 * ICAO codes of airports separated by space.
+	 * Group of spatial data.
 	 */
-	stations: string;
-	/**
-	 * WMO codes of countries separated by space.
-	 */
-	countries: string;
+	spatial: {
+		/**
+		 * ICAO codes of airports separated by space.
+		 */
+		stations: string;
+		/**
+		 * WMO codes of countries separated by space.
+		 */
+		countries: string;
+	};
 }
