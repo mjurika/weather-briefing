@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ColorReportPipe implements PipeTransform {
 	private regex: RegExp;
+
 	constructor() {
 		this.regex = new RegExp(/(BKN|FEW|SCT)(\d{3})([\s\S]*)/);
 	}

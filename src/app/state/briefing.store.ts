@@ -2,6 +2,19 @@ import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 import { TMessageType } from '@interfaces/appConfig';
 
+/**
+ * Briefing store model.
+ */
+export interface IBriefingState {
+	/**
+	 * List of reports.
+	 */
+	reports: IReport[];
+}
+
+/**
+ * Report entity.
+ */
 export interface IReport {
 	/**
 	 * List of identifiers of queries that produced this entry.
@@ -51,12 +64,6 @@ export interface IReport {
 	 * End of validity range
 	 */
 	validEnd?: string;
-}
-export interface IBriefingState {
-	/**
-	 * List of reports.
-	 */
-	reports: IReport[];
 }
 
 const createInitialState = (): IBriefingState => {

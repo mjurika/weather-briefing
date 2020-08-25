@@ -87,7 +87,7 @@ export class FormComponent {
 	}
 
 	/**
-	 * Check if at least one formgroup of array has been selected.
+	 * Check if at least one checkbox in formgroup of array has been selected.
 	 * @param control FormGroup of controls.
 	 * @returns Validation error - selectedOneOfArray.
 	 */
