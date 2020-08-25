@@ -46,6 +46,14 @@ export class FormComponent {
 		return this.form.get('spatial') as FormGroup;
 	}
 
+	get airports(): FormGroup {
+		return this.spatial.get('spatiairportsal') as FormGroup;
+	}
+
+	get countries(): FormGroup {
+		return this.spatial.get('countries') as FormGroup;
+	}
+
 	/**
 	 * Build message types FormArray.
 	 * @returns Form array of boolean controls.
@@ -76,7 +84,8 @@ export class FormComponent {
 		let anyValue = false;
 
 		Object.keys(control.controls).forEach((key) => {
-			if (!control.controls[key].value?.trim()) {
+			const val = control.controls[key].value;
+			if (!val || !val.trim()) {
 				return;
 			}
 			anyValue = true;

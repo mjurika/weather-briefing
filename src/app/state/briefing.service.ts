@@ -71,10 +71,10 @@ export class BriefingService {
 	 * @returns Array of string values or undefined.
 	 */
 	private splitByWhiteSpace(data?: string): string[] | undefined {
-		if (!data?.trim()) {
+		if (!data || !data.trim()) {
 			return;
 		}
-		return data.trim()?.split(/\s+/);
+		return data.trim().split(/\s+/);
 	}
 
 	/**

@@ -16,7 +16,7 @@ export class ColorReportPipe implements PipeTransform {
 	 * @param value Text to color.
 	 */
 	transform(value: string): string {
-		const values = value?.split(' ').map((val) => {
+		const values = value.split(' ').map((val) => {
 			const r = this.regex.exec(val);
 			if (!r) {
 				return val;
