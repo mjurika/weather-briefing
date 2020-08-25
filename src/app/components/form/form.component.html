@@ -2,11 +2,10 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <!-- Form errors -->
     <div class="error-container">
-      <mat-error class="global" *ngIf="spatial.touched && spatial.errors && spatial.errors.requiredOneOfGroup">
+      <mat-error *ngIf="spatial.touched && spatial.errors && spatial.errors.requiredOneOfGroup">
         {{t('requiredOneOfGroup')}}
       </mat-error>
-      <mat-error class="global"
-        *ngIf="messageTypes.touched && messageTypes.errors && messageTypes.errors.selectedOneOfArray">
+      <mat-error *ngIf="messageTypes.touched && messageTypes.errors && messageTypes.errors.selectedOneOfArray">
         {{t('selectedOneOfArray')}}
       </mat-error>
     </div>
