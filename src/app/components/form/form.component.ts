@@ -47,7 +47,7 @@ export class FormComponent {
 	}
 
 	get airports(): FormGroup {
-		return this.spatial.get('spatiairportsal') as FormGroup;
+		return this.spatial.get('airports') as FormGroup;
 	}
 
 	get countries(): FormGroup {
