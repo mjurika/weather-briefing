@@ -1,4 +1,4 @@
-import { IMessageType } from '@interfaces/appConfig';
+import { IMessageType } from '../../interfaces/appConfig';
 
 /**
  * Form data.

@@ -2,12 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src",
-		"paths": {
-			"@interfaces/*": ["app/interfaces/*"],
-			"@services/*": ["app/services/*"],
-			"@appModule/*": ["app/*"]
-		},
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

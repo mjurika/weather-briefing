@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { applyTransaction, guid } from '@datorama/akita';
-import { IJsonRPCRequest, IJsonRPCResponse } from '@interfaces/jsonRpc';
-import { AppConfigService } from '@services/app-config.service';
 import { IFormData } from '../components/form/IFormData';
+import { IJsonRPCRequest, IJsonRPCResponse } from '../interfaces/jsonRpc';
+import { AppConfigService } from '../services/app-config.service';
 import { BriefingStore, IReport } from './briefing.store';
 import { IQueryParams } from './IQueryParams';
 

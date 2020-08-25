@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { BriefingQuery } from '@appModule/state/briefing.query';
-import { IReport } from '@appModule/state/briefing.store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { BriefingQuery } from '../../state/briefing.query';
+import { IReport } from '../../state/briefing.store';
 
 @Component({
 	selector: 'app-briefing',

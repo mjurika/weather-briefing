@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
-import { TMessageType } from '@interfaces/appConfig';
+import { TMessageType } from '../interfaces/appConfig';
 
 /**
  * Briefing store model.

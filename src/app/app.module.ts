@@ -5,15 +5,13 @@ import { APP_INITIALIZER, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
-import { AppConfigService } from '@services/app-config.service';
-import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { BriefingComponent } from './components/briefing/briefing.component';
 import { FormComponent } from './components/form/form.component';
 import { MaterialModule } from './material.module';
-import { TranslocoRootModule } from './transloco-root.module';
 import { ColorReportPipe } from './pipes/color-report.pipe';
+import { AppConfigService } from './services/app-config.service';
+import { TranslocoRootModule } from './transloco-root.module';
 
 /**
  * Register locale for datePipe.
@@ -32,16 +30,7 @@ const appInitializerFn = (appConfigService: AppConfigService) => {
 
 @NgModule({
 	declarations: [AppComponent, FormComponent, BriefingComponent, ColorReportPipe],
-	imports: [
-		BrowserModule,
-		BrowserAnimationsModule,
-		environment.production ? [] : AkitaNgDevtools.forRoot(),
-		HttpClientModule,
-		TranslocoRootModule,
-		FormsModule,
-		ReactiveFormsModule,
-		MaterialModule
-	],
+	imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, TranslocoRootModule, FormsModule, ReactiveFormsModule, MaterialModule],
 	providers: [
 		AppConfigService,
 		{

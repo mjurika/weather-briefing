@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { BriefingService } from '@appModule/state/briefing.service';
-import { IMessageType } from '@interfaces/appConfig';
-import { AppConfigService } from '@services/app-config.service';
+import { IMessageType } from '../../interfaces/appConfig';
+import { AppConfigService } from '../../services/app-config.service';
+import { BriefingService } from '../../state/briefing.service';
 import { IFormData } from './IFormData';
 
 @Component({
