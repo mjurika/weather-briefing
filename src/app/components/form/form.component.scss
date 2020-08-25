@@ -1,10 +1,10 @@
 form {
 	max-width: 450px;
-	padding: 2rem 0;
-	margin-top: 2rem;
+	padding: 3rem 0;
+	margin-top: 1rem;
 	position: relative;
 
-	.mat-error.global {
+	.error-container {
 		position: absolute;
 		top: 0;
 	}
