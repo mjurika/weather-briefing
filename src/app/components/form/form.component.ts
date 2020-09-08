@@ -55,15 +55,6 @@ export class FormComponent {
 	}
 
 	/**
-	 * Build message types FormArray.
-	 * @returns Form array of boolean controls.
-	 */
-	buildMessageTypes(): FormArray {
-		const arr = this.messageTypesCnf.map((type) => this.formBuilder.group(type));
-		return this.formBuilder.array(arr, { validators: this.selectedOneOfArray });
-	}
-
-	/**
 	 * Form submit handler.
 	 */
 	onSubmit(): void {
@@ -73,6 +64,15 @@ export class FormComponent {
 		}
 
 		this.briefingService.get(this.form.value as IFormData);
+	}
+
+	/**
+	 * Build message types FormArray.
+	 * @returns Form array of boolean controls.
+	 */
+	private buildMessageTypes(): FormArray {
+		const arr = this.messageTypesCnf.map((type) => this.formBuilder.group(type));
+		return this.formBuilder.array(arr, { validators: this.selectedOneOfArray });
 	}
 
 	/**
