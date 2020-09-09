@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { BriefingService } from '@appModule/state/briefing.service';
 import { IMessageType } from '@interfaces/appConfig';
 import { AppConfigService } from '@services/app-config.service';
@@ -46,12 +46,12 @@ export class FormComponent {
 		return this.form.get('spatial') as FormGroup;
 	}
 
-	get airports(): FormGroup {
-		return this.spatial.get('airports') as FormGroup;
+	get airports(): FormControl {
+		return this.spatial.get('airports') as FormControl;
 	}
 
-	get countries(): FormGroup {
-		return this.spatial.get('countries') as FormGroup;
+	get countries(): FormControl {
+		return this.spatial.get('countries') as FormControl;
 	}
 
 	/**
